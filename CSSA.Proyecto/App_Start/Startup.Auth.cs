@@ -1,4 +1,5 @@
-﻿using CSSA.Proyecto.DBContext;
+﻿using CSSA.Proyecto.App_Start;
+using CSSA.Proyecto.DBContext;
 using CSSA.Proyecto.Providers;
 using Microsoft.AspNet.Identity;
 using Microsoft.Owin;
@@ -10,9 +11,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace CSSA.Proyecto.App_Start
+namespace CSSA.Proyecto
 {
-	public class Startup
+	public partial class Startup
 	{
 	public static OAuthAuthorizationServerOptions OAuthOptions { get; private set; }
 

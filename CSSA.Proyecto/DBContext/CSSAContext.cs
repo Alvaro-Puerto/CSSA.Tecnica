@@ -1,4 +1,5 @@
-﻿using CSSA.Proyecto.Util;
+﻿using CSSA.Proyecto.Models;
+using CSSA.Proyecto.Util;
 using Microsoft.AspNet.Identity.EntityFramework;
 using System;
 using System.Collections.Generic;
@@ -10,6 +11,8 @@ namespace CSSA.Proyecto.DBContext
 {
     public class CSSAContext : IdentityDbContext<ConfiguracionUsuario>
     {
+        public DbSet<Producto> Producto { get; set; }
+
         public CSSAContext() : base("DefaultConnection", throwIfV1Schema: false)
         {
         }
