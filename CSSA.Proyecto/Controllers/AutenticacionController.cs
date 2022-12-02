@@ -50,6 +50,11 @@ namespace CSSA.Proyecto.Controllers
             get { return Request.GetOwinContext().Authentication; }
         }
 
+        /// <summary>
+        /// Crear registro de usuario
+        /// </summary>
+        /// <param name="registro"></param>
+        /// <returns></returns>
         [HttpPost]
         [Route("Registro")]
         public async Task<IHttpActionResult> Register(RegistroDto registro)

@@ -37,6 +37,11 @@ namespace CSSA.Proyecto.Controllers
             return Ok(productos);
         }
 
+        /// <summary>
+        /// Lista un articulo determinado 
+        /// </summary>
+        [HttpGet]
+        [Route("Show")]
         public IHttpActionResult Show(int id)
         {
             var producto = _context.Producto.Find(id);
@@ -49,6 +54,11 @@ namespace CSSA.Proyecto.Controllers
             return Ok(producto);
         }
 
+        ///<summary>
+        /// Buscar un articulo por su nombre
+        ///</summary>
+        [HttpGet]
+        [Route("Search")]
         public IHttpActionResult Search(string parametro)
         {
             var productos = new List<Producto>();
@@ -64,6 +74,11 @@ namespace CSSA.Proyecto.Controllers
 
         }
 
+
+
+        ///<summary>
+        /// Crea un nuevo producto 
+        ///</summary>
         [HttpPost]
         [Route("Post")]
         public IHttpActionResult Post(ProductoDto producto)
@@ -81,6 +96,10 @@ namespace CSSA.Proyecto.Controllers
             return Ok(productoR);
         }
 
+
+        ///<summary>
+        /// Actualiza un producto
+        ///</summary>
         [Route("Put")]
         public async Task<IHttpActionResult> Put(int id, ProductoDto producto)
         {
@@ -106,6 +125,10 @@ namespace CSSA.Proyecto.Controllers
             return Ok(productoR);
         }
 
+
+        ///<summary>
+        /// Borra un registro 
+        ///</summary>
         [HttpDelete]
         [Route("Delete")]
         public async Task<IHttpActionResult> Delete(int id)
